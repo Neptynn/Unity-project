@@ -16,21 +16,17 @@ public class Player : MonoBehaviour
     [SerializeField] private float movingSpeed = 5f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private int maxJumpValue = 2;
-    [SerializeField] private GameObject _cameraFollowGo;
+
 
     private int jumpCount = 0;
-    private Rigidbody2D _rb;
+    protected Rigidbody2D _rb;
     private float minMivingSpeed = 0.1f;
     private bool isRunning = false;
     private bool isGrounded = true;
+    private bool _isFacingRight = true;
     private Vector2 move;
 
     public UnityEvent startJumpAnim = new();
-
-    
-    private PlayerFollowCam _followCam;
-    private float _fallSpeedYDampingChangeTreshold;
-    private bool _isFacingRight = true;
 
     private void Awake()
     {
@@ -42,38 +38,20 @@ public class Player : MonoBehaviour
         _playerInputAction = new PlayerInputActions();
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
-        
-
-    }
-    private void Start()
-    {
-        _followCam = _cameraFollowGo.GetComponent<PlayerFollowCam>();
-        _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
-    }
-    
+    }  
 
     private void FixedUpdate()
     {
         OnMove();
         isGrounded = _groundCheck.GetIsGround();
-        if (move.x != 0)
+        if (isGrounded)
         {
-            TurnCheck();
+            jumpCount = 0;
         }
-
-        if (_rb.velocity.y < _fallSpeedYDampingChangeTreshold && !CameraManager.instance.IsLerpingYDaming && !CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpYDamping(true);
-        }
-        if (_rb.velocity.y > 0f && !CameraManager.instance.IsLerpingYDaming && CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpedFromPlayerFalling = false;
-            CameraManager.instance.LerpYDamping(false);
-        } 
     }
     private void Update()
     {
-        
+
     }
 
     public void OnMove()
@@ -108,45 +86,12 @@ public class Player : MonoBehaviour
     public void OnJump()
     {
         isGrounded = _groundCheck.GetIsGround();
-        if (isGrounded)
-        {
-            jumpCount = 0;
-        }
         if (isGrounded || ++jumpCount < maxJumpValue)
         {
             startJumpAnim?.Invoke();
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
         }
         //_rb.AddForce(Vector2.up * jumpForce);
-    }
-
-    private void TurnCheck()
-    {
-        if (move.x > 0 && !_isFacingRight)
-        {
-            Turn();
-        }
-        else if (move.x < 0 && _isFacingRight)
-        {
-            Turn();
-        }
-    }
-    private void Turn()
-    {
-        if (_isFacingRight)
-        {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(_rotate);
-            _isFacingRight = !_isFacingRight;
-            _followCam.CallTurn();
-        }
-        else
-        {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(_rotate);
-            _isFacingRight = !_isFacingRight;
-            _followCam.CallTurn();
-        }
     }
 
     public bool GetIsFacingRight()

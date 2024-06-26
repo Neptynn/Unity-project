@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class PlayerVisual : MonoBehaviour
 {
+    public static PlayerVisual Instanse { get; private set; }
+
     private Animator _animator;
     private Rigidbody2D _rb;
     private const string RUNNING = "Running";
@@ -14,12 +16,12 @@ public class PlayerVisual : MonoBehaviour
     private const string Do_JUMP = "DoJump";
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _cameraFollowGo;
+   
 
-    public static PlayerVisual Instanse { get; private set; }
-
-
-    private Vector2 _moveVec;
-
+    public bool _isFacingRight = true;
+    private Vector2 move;
+    private PlayerFollowCam _followCam;
+    private float _fallSpeedYDampingChangeTreshold;
 
 
     private void Awake()
@@ -28,7 +30,7 @@ public class PlayerVisual : MonoBehaviour
         {
             Instanse = this;
         }
-       _rb = GetComponentInParent<Rigidbody2D>();
+        _rb = GetComponentInParent<Rigidbody2D>();
 
         _animator = GetComponent<Animator>();
         //_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,7 +38,11 @@ public class PlayerVisual : MonoBehaviour
         _player.startJumpAnim.AddListener(StartJumpAnim);
 
     }
-
+    private void Start()
+    {
+        _followCam = _cameraFollowGo.GetComponent<PlayerFollowCam>();
+       _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
+    }
 
     private void Update()
     {
@@ -50,11 +56,52 @@ public class PlayerVisual : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //_moveVec = Player.Instance.GetMove();
+        move = Player.Instance.GetMove();
+        if (move.x != 0)
+        {
+            TurnCheck();
+        }
 
+        if (_rb.velocity.y < _fallSpeedYDampingChangeTreshold && !CameraManager.instance.IsLerpingYDaming && !CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpYDamping(true);
+        }
+        if (_rb.velocity.y > 0f && !CameraManager.instance.IsLerpingYDaming && CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpedFromPlayerFalling = false;
+            CameraManager.instance.LerpYDamping(false);
+        }
 
     }
 
+    private void TurnCheck()
+    {
+        if (move.x > 0 && !_isFacingRight)
+        {
+            Turn();
+        }
+        else if (move.x < 0 && _isFacingRight)
+        {
+            Turn();
+        }
+    }
+    private void Turn()
+    {
+        if (_isFacingRight)
+        {
+            Vector3 _rotate = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(_rotate);
+            _isFacingRight = !_isFacingRight;
+            _followCam.CallTurn();
+        }
+        else
+        {
+            Vector3 _rotate = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(_rotate);
+            _isFacingRight = !_isFacingRight;
+            _followCam.CallTurn();
+        }
+    }
     private void StartJumpAnim()
     {
         if (_animator != null)

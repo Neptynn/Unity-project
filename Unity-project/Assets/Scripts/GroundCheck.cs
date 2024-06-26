@@ -27,9 +27,9 @@ public class GroundCheck : MonoBehaviour
     }
     //void OnDrawGizmos()
     //{
-    //    // Коробка в редакторі 
+    //    //Коробка в редакторі
     //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireCube(GroundCheck.position, checkSize);
+    //    Gizmos.DrawWireCube(_transform.position, _collider.size);
     //}
 }
 

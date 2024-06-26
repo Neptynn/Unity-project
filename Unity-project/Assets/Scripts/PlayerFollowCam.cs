@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,11 +18,11 @@ public class PlayerFollowCam : MonoBehaviour
     private void Awake()
     {
         _playerVisual = _playerTransform.gameObject.GetComponent<PlayerVisual>();
-
+        _isFacingRight = _playerVisual._isFacingRight;
     }
     private void Start()
     {
-        _isFacingRight = Player.Instance.GetIsFacingRight();
+ 
     }
     // Update is called once per frame
     void Update()
@@ -29,35 +30,49 @@ public class PlayerFollowCam : MonoBehaviour
         transform.position = _playerTransform.position;
     }
 
+
     public void CallTurn()
     {
         //_turnCoroutine = StartCoroutine(FlipYLerp());
-        LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine();
-    }
-    //private IEnumerator FlipYLerp()
-    //{
-    //    float startRotation = transform.localEulerAngles.y;
-    //    float endRotationAmount = DetermineEndRotation();
-    //    float yRotation = 0f;
-    //    float elapsedTime = 0f;
-    //    while(elapsedTime < _flipYRotationTime)
-    //    {
-    //        elapsedTime += Time.deltaTime;
+        //LeanTween.cancel(gameObject);
+        //LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine().setOnComplete(OnComplete);
+        transform.DORotate(new Vector3(0f, DetermineEndRotation(), 0f), _flipYRotationTime).SetEase(Ease.InOutSine);
 
-    //        yRotation = Mathf.Lerp(startRotation, endRotationAmount, (elapsedTime / _flipYRotationTime));
-    //        transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
-    //        yield return null;
-    //    }
-    //}
+    }
+    void OnComplete()
+    {
+
+        Debug.Log("Анімація завершена!");
+        // Додаткові дії після завершення анімації
+    }
+    private IEnumerator FlipYLerp()
+    {
+        float startRotation = transform.localEulerAngles.y;
+        float endRotationAmount = DetermineEndRotation();
+        float yRotation = 0f;
+        float elapsedTime = 0f;
+        while (elapsedTime < _flipYRotationTime)
+        {
+            elapsedTime += Time.deltaTime;
+
+            yRotation = Mathf.Lerp(startRotation, endRotationAmount, (elapsedTime / _flipYRotationTime));
+            transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
+            yield return null;
+        }
+        Debug.Log("Yes");
+    }
     private float DetermineEndRotation()
     {
         _isFacingRight = !_isFacingRight;
-        if(_isFacingRight )
+        Debug.Log(_isFacingRight);
+        if (_isFacingRight )
         {
+            Debug.Log(0);
             return 0f;
         }
         else
         {
+            Debug.Log(180);
             return 180f;
         }
     }
