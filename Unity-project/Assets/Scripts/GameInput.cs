@@ -17,13 +17,15 @@ public class GameInput : MonoBehaviour
     public static GameInput Instance { get; private set; }
 
     public UnityEvent jumpEvent = new();
+    public UnityEvent attackEvent = new();
 
     private void Awake()
     {
         Instance = this;
         _playerInputAction = new PlayerInputActions();
         _playerInputAction.Enable();
-        _playerInputAction.Player.Jump.performed += context => OnJump();
+        //_playerInputAction.Player.Jump.performed += context => OnJump();
+        //_playerInputAction.Player.Attack.performed += context => OnAttack();
     }
     void OnEnable()
     {
@@ -37,6 +39,7 @@ public class GameInput : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        //Debug.Log(move);
         move = context.ReadValue<Vector2>();
     }
 
@@ -46,11 +49,18 @@ public class GameInput : MonoBehaviour
     }
     public void OnJump()
     {
+        Debug.Log("Yes");
         jumpEvent?.Invoke();
     }
 
-    private void PlayerAttack_started(InputAction.CallbackContext context)
+    public void OnAttack()
     {
-       // OnPlayerAttack?.Invoke(this, EventArgs.Empty);
+        attackEvent?.Invoke();
     }
+
+
+    //private void PlayerAttack_started(InputAction.CallbackContext context)
+    //{
+    //   // OnPlayerAttack?.Invoke(this, EventArgs.Empty);
+    //}
 }

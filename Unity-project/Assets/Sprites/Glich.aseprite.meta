@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638548561972057847
+  platformSettingsDirtyTick: 638550069133714115
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -1323,8 +1323,8 @@ ScriptedImporter:
     uvTransform: {x: 687, y: 378}
   - name: Glich_Frame_60
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.5555556, y: -0.0877193}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1343,8 +1343,8 @@ ScriptedImporter:
     uvTransform: {x: 473, y: -1}
   - name: Glich_Frame_61
     originalName: 
-    pivot: {x: 0.57627124, y: -0.0925926}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1403,8 +1403,8 @@ ScriptedImporter:
     uvTransform: {x: 773, y: 352}
   - name: Glich_Frame_64
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.4366197, y: -0.033333335}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1423,8 +1423,8 @@ ScriptedImporter:
     uvTransform: {x: -25, y: 2}
   - name: Glich_Frame_65
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.42857143, y: -0.0877193}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1843,8 +1843,8 @@ ScriptedImporter:
     uvTransform: {x: 776, y: 539}
   - name: Glich_Frame_87
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.5041322, y: -0.09803921}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1883,8 +1883,8 @@ ScriptedImporter:
     uvTransform: {x: 336, y: 67}
   - name: Glich_Frame_89
     originalName: 
-    pivot: {x: 0.45614037, y: -0.104166664}
-    alignment: 9
+    pivot: {x: 0.5, y: 0}
+    alignment: 7
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -1923,8 +1923,8 @@ ScriptedImporter:
     uvTransform: {x: 440, y: 135}
   - name: Glich_Frame_91
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 7
+    pivot: {x: 0.625, y: -0.039215684}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2

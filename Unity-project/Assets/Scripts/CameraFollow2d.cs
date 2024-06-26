@@ -28,7 +28,7 @@ public class CameraFollow2d : MonoBehaviour
     {
         if (this.playerTransform) 
         {
-            Vector3 target = new Vector3
+            Vector3 target = new ()
             {
                 x = this.playerTransform.position.x,
                 y = this.playerTransform.position.y,
