@@ -34,8 +34,6 @@ public class PlayerFollowCam : MonoBehaviour
     public void CallTurn()
     {
         //_turnCoroutine = StartCoroutine(FlipYLerp());
-        //LeanTween.cancel(gameObject);
-        //LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine().setOnComplete(OnComplete);
         transform.DORotate(new Vector3(0f, DetermineEndRotation(), 0f), _flipYRotationTime).SetEase(Ease.InOutSine);
 
     }
