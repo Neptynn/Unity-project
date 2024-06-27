@@ -62,15 +62,12 @@ public class PlayerFollowCam : MonoBehaviour
     private float DetermineEndRotation()
     {
         _isFacingRight = !_isFacingRight;
-        Debug.Log(_isFacingRight);
         if (_isFacingRight )
         {
-            Debug.Log(0);
             return 0f;
         }
         else
         {
-            Debug.Log(180);
             return 180f;
         }
     }

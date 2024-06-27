@@ -19,12 +19,14 @@ public class Player : MonoBehaviour
 
 
     private int jumpCount = 0;
-    protected Rigidbody2D _rb;
+    public Rigidbody2D _rb;
     private float minMivingSpeed = 0.1f;
     private bool isRunning = false;
     private bool isGrounded = true;
     private bool _isFacingRight = true;
     private Vector2 move;
+    private bool _jumpOffEnable = true;
+    private bool isSKeyPressed = false;
 
     public UnityEvent startJumpAnim = new();
 
@@ -38,8 +40,8 @@ public class Player : MonoBehaviour
         _playerInputAction = new PlayerInputActions();
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
-    }  
-
+    }
+    
     private void FixedUpdate()
     {
         OnMove();
@@ -51,7 +53,7 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-
+        isSKeyPressed = Keyboard.current.sKey.isPressed;
     }
 
     public void OnMove()
@@ -85,13 +87,32 @@ public class Player : MonoBehaviour
 
     public void OnJump()
     {
+        
         isGrounded = _groundCheck.GetIsGround();
-        if (isGrounded || ++jumpCount < maxJumpValue)
+        if (!isSKeyPressed && (isGrounded || ++jumpCount < maxJumpValue))
         {
             startJumpAnim?.Invoke();
+            //_rb.AddForce(Vector2.up * jumpForce);
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
         }
         //_rb.AddForce(Vector2.up * jumpForce);
+    }
+    public void OnJumpDown()
+    {
+        if(_jumpOffEnable)
+        {
+            Debug.Log(true);
+            StartCoroutine("JumpOff");
+        }
+
+    }
+    IEnumerator JumpOff()
+    {
+        _jumpOffEnable = false;
+        Physics2D.IgnoreLayerCollision(10, 11, true);
+        yield return new WaitForSeconds(0.3f);
+        Physics2D.IgnoreLayerCollision(10, 11, false);
+        _jumpOffEnable = true;
     }
 
     public bool GetIsFacingRight()
