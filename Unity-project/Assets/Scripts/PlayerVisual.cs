@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class PlayerVisual : MonoBehaviour
 {
-    public static PlayerVisual Instanse { get; private set; }
+    public static PlayerVisual Instance { get; private set; }
 
     private Animator _animator;
     private Rigidbody2D _rb;
@@ -14,21 +14,22 @@ public class PlayerVisual : MonoBehaviour
     private const string IS_GROUND = "IsGround";
     private const string CANT_JUMP = "CantJump";
     private const string Do_JUMP = "DoJump";
+    private const string MOVE_UP = "MoveUp";
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _cameraFollowGo;
-   
+
 
     public bool _isFacingRight = true;
     private Vector2 move;
     private PlayerFollowCam _followCam;
     private float _fallSpeedYDampingChangeTreshold;
 
-
+    [SerializeField] private LayerMask _collisionMask;
     private void Awake()
     {
-        if (Instanse == null)
+        if (Instance == null)
         {
-            Instanse = this;
+            Instance = this;
         }
         _rb = GetComponentInParent<Rigidbody2D>();
 
@@ -41,7 +42,7 @@ public class PlayerVisual : MonoBehaviour
     private void Start()
     {
         _followCam = _cameraFollowGo.GetComponent<PlayerFollowCam>();
-       _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
+        _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
     }
 
     private void Update()
@@ -51,8 +52,9 @@ public class PlayerVisual : MonoBehaviour
             _animator.SetBool(RUNNING, Player.Instance.IsRunning());
             _animator.SetBool(IS_GROUND, Player.Instance.IsGrounded());
             _animator.SetBool(CANT_JUMP, Player.Instance.CantJump());
+            _animator.SetBool(MOVE_UP, _rb.velocity.y > 0.001);
         }
-      
+
     }
     private void FixedUpdate()
     {
@@ -104,6 +106,7 @@ public class PlayerVisual : MonoBehaviour
     }
     private void StartJumpAnim()
     {
+        //&& GroundCheck.Instance.GetCollisiosCollider().gameObject.layer != _collisionMask
         if (_animator != null)
         {
             _animator.SetTrigger(Do_JUMP);

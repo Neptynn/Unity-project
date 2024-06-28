@@ -46,10 +46,12 @@ public class Player : MonoBehaviour
     {
         OnMove();
         isGrounded = _groundCheck.GetIsGround();
-        if (isGrounded)
+        if (isGrounded || (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
         {
+            isGrounded = true ;
             jumpCount = 0;
         }
+        //Debug.Log(_rb.velocity.y);
     }
     private void Update()
     {
@@ -101,7 +103,6 @@ public class Player : MonoBehaviour
     {
         if(_jumpOffEnable)
         {
-            Debug.Log(true);
             StartCoroutine("JumpOff");
         }
 

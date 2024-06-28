@@ -16,8 +16,9 @@ TagManager:
   - 
   - 
   - 
-  - Platform
   - Player
+  - Platform
+  - Ground
   - Enemy
   - Items
   - 
@@ -37,19 +38,21 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
-  - name: Items
-    uniqueID: 569226649
+  - name: Ground
+    uniqueID: 3694807351
     locked: 0
-  - name: Player
-    uniqueID: 3969555135
+  - name: Platforms
+    uniqueID: 969125361
     locked: 0
   - name: Enemy
     uniqueID: 4092521691
     locked: 0
-  - name: Platforms
-    uniqueID: 969125361
+  - name: Player
+    uniqueID: 3969555135
+    locked: 0
+  - name: Items
+    uniqueID: 569226649
     locked: 0
   - name: Default
     uniqueID: 0
