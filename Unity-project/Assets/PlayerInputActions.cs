@@ -62,6 +62,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""593ea7f5-77a5-4258-9a59-d5fd129d11ef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb8c6cde-a118-4ddb-bc8b-364d3bb3f101"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveWall"",
+                    ""type"": ""Value"",
+                    ""id"": ""e54dcee0-9cb8-4849-a8da-95c1e5bc93de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -152,6 +179,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""JumpDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aaab456b-fff9-45b0-a972-4be7de8e8cae"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8cf04392-abd6-4a6c-b695-6b9315e45823"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bdf7a033-c07a-47c8-bc08-d3d618331a83"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73369a91-7254-4109-a7e6-93b3f17d25f5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +235,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_JumpDown = m_Player.FindAction("JumpDown", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_MoveWall = m_Player.FindAction("MoveWall", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +303,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_JumpDown;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_MoveWall;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -237,6 +314,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @JumpDown => m_Wrapper.m_Player_JumpDown;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @MoveWall => m_Wrapper.m_Player_MoveWall;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +338,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
+            @MoveWall.started += instance.OnMoveWall;
+            @MoveWall.performed += instance.OnMoveWall;
+            @MoveWall.canceled += instance.OnMoveWall;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -274,6 +363,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
+            @MoveWall.started -= instance.OnMoveWall;
+            @MoveWall.performed -= instance.OnMoveWall;
+            @MoveWall.canceled -= instance.OnMoveWall;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -297,5 +395,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnJumpDown(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnMoveWall(InputAction.CallbackContext context);
     }
 }

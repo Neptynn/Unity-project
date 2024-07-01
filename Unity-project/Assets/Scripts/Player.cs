@@ -13,22 +13,32 @@ public class Player : MonoBehaviour
     [Header("Set in Inspector")]
     //[SerializeField] private PlayerVisual _playerVisual;
     [SerializeField] private GroundCheck _groundCheck;
-    [SerializeField] private float movingSpeed = 5f;
+    [SerializeField] private RoofCheck _isRoofUp;
+    [SerializeField] private float movingSpeed = 10f;
+    [SerializeField] private float crochSpeed = 5f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private int maxJumpValue = 2;
-
+    [SerializeField] private int _dashImpulse = 5000;
+    [SerializeField] private float _cooldownDashTime = 2f;
+    private bool _lockDash = false;
+    private float currentSpeed;
 
     private int jumpCount = 0;
     public Rigidbody2D _rb;
     private float minMivingSpeed = 0.1f;
     private bool isRunning = false;
     private bool isGrounded = true;
-    private bool _isFacingRight = true;
+    private bool isCrouch = false;
+   
+    // private bool _isFacingRight = true;
     private Vector2 move;
     private bool _jumpOffEnable = true;
     private bool isSKeyPressed = false;
 
+
     public UnityEvent startJumpAnim = new();
+    public UnityEvent startDashAnim = new();
+    public UnityEvent startCrouchingAnim = new();
 
     private void Awake()
     {
@@ -40,18 +50,21 @@ public class Player : MonoBehaviour
         _playerInputAction = new PlayerInputActions();
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
+        currentSpeed = movingSpeed;
     }
     
     private void FixedUpdate()
     {
         OnMove();
         isGrounded = _groundCheck.GetIsGround();
+        Debug.Log(_rb.velocity.y);
         if (isGrounded || (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
         {
-            isGrounded = true ;
+            isGrounded = true;
+
             jumpCount = 0;
         }
-        //Debug.Log(_rb.velocity.y);
+
     }
     private void Update()
     {
@@ -61,7 +74,9 @@ public class Player : MonoBehaviour
     public void OnMove()
     {
         move = _playerInputAction.Player.Move.ReadValue<Vector2>();
-        _rb.velocity = new Vector2(move.x * movingSpeed, _rb.velocity.y);
+
+        //PlayerVisual.Instance.TurnCheck(move);
+        _rb.velocity = new Vector2(move.x * currentSpeed, _rb.velocity.y);
         isRunning = Mathf.Abs(move.x) > minMivingSpeed || Mathf.Abs(move.y) > minMivingSpeed;
     }
 
@@ -86,11 +101,13 @@ public class Player : MonoBehaviour
     {
         return move;
     }
+    public bool GetIsCrouching()
+    {
+        return isCrouch;
+    }
 
     public void OnJump()
     {
-        
-        isGrounded = _groundCheck.GetIsGround();
         if (!isSKeyPressed && (isGrounded || ++jumpCount < maxJumpValue))
         {
             startJumpAnim?.Invoke();
@@ -116,8 +133,48 @@ public class Player : MonoBehaviour
         _jumpOffEnable = true;
     }
 
-    public bool GetIsFacingRight()
+    private void OnDash()
     {
-        return _isFacingRight;
+        if(!_lockDash && !isCrouch)
+        {
+            startDashAnim?.Invoke();
+            _lockDash = true;
+            Invoke("LockDash", _cooldownDashTime);
+            _rb.velocity = new Vector2(0.1f, 0.1f);
+            if (PlayerVisual.Instance.transform.rotation.y > 0)
+            {
+                _rb.AddForce(Vector2.left * _dashImpulse);
+
+            }
+            else { _rb.AddForce(Vector2.right * _dashImpulse); }
+        }
     }
+    private void LockDash()
+    {
+        _lockDash = false;
+    }
+
+    private void OnCrouch()
+    {
+        if (!_isRoofUp.IsRoofUp() && isGrounded)
+        {
+            currentSpeed = crochSpeed;
+            isCrouch = !isCrouch;
+            startCrouchingAnim?.Invoke();
+        }
+        if(!isCrouch)
+        {
+            currentSpeed = movingSpeed;
+        }
+    }
+
+    private void OnMoveWall()
+    {
+
+    }
+
+    //public bool GetIsFacingRight()
+    //{
+    //    return _isFacingRight;
+    //}
 }

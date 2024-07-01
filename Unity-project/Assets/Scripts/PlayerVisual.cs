@@ -14,9 +14,13 @@ public class PlayerVisual : MonoBehaviour
     private const string IS_GROUND = "IsGround";
     private const string CANT_JUMP = "CantJump";
     private const string Do_JUMP = "DoJump";
-    private const string MOVE_UP = "MoveUp";
+    private const string MOVE_X = "MoveX";
+    private const string CROUCHING = "Crouching";
     [SerializeField] private Player _player;
     [SerializeField] private GameObject _cameraFollowGo;
+
+    [SerializeField] private Collider2D _colliderStay;
+    [SerializeField] private Collider2D _colliderCrouch;
 
 
     public bool _isFacingRight = true;
@@ -37,6 +41,8 @@ public class PlayerVisual : MonoBehaviour
         //_spriteRenderer = GetComponent<SpriteRenderer>();
         //_collider = GetComponent<Collider2D>();
         _player.startJumpAnim.AddListener(StartJumpAnim);
+        _player.startDashAnim.AddListener(StartDashAnim);
+        _player.startCrouchingAnim.AddListener(StartCrouchingAnim);
 
     }
     private void Start()
@@ -52,14 +58,15 @@ public class PlayerVisual : MonoBehaviour
             _animator.SetBool(RUNNING, Player.Instance.IsRunning());
             _animator.SetBool(IS_GROUND, Player.Instance.IsGrounded());
             _animator.SetBool(CANT_JUMP, Player.Instance.CantJump());
-            _animator.SetBool(MOVE_UP, _rb.velocity.y > 0.001);
+            _animator.SetFloat(MOVE_X, Mathf.Abs(Player.Instance._rb.velocity.x));
         }
 
     }
     private void FixedUpdate()
     {
         move = Player.Instance.GetMove();
-        if (move.x != 0)
+
+        if (_rb.velocity.x != 0)
         {
             TurnCheck();
         }
@@ -73,37 +80,56 @@ public class PlayerVisual : MonoBehaviour
             CameraManager.instance.LerpedFromPlayerFalling = false;
             CameraManager.instance.LerpYDamping(false);
         }
-
     }
 
-    private void TurnCheck()
+    //public void TurnCheck(Vector2 move)
+    //{
+    //    if (move.x > 0)
+    //    {
+    //        Vector3 _rotate = new Vector3(transform.rotation.x, 0.0f, transform.rotation.z);
+    //        transform.rotation = Quaternion.identity;
+    //        transform.rotation = Quaternion.Euler(_rotate);
+    //        _isFacingRight = true;
+    //        _followCam.CallTurn();
+    //    }
+    //    else if (move.x < 0)
+    //    {
+    //        Vector3 _rotate = new Vector3(transform.rotation.x, 180.0f, transform.rotation.z);
+    //        transform.rotation = Quaternion.identity;
+    //        transform.rotation = Quaternion.Euler(_rotate);
+    //        _isFacingRight = false;
+    //        _followCam.CallTurn();
+    //    }
+    //}
+
+    public void TurnCheck()
     {
-        if (move.x > 0 && !_isFacingRight)
+        if (move.x < 0 && _isFacingRight)
         {
-            Turn();
-        }
-        else if (move.x < 0 && _isFacingRight)
-        {
-            Turn();
-        }
-    }
-    private void Turn()
-    {
-        if (_isFacingRight)
-        {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            Vector3 _rotate = new Vector3(transform.rotation.x, 180.0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
             _followCam.CallTurn();
         }
-        else
+        else if(move.x > 0 && !_isFacingRight)
         {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            Vector3 _rotate = new Vector3(transform.rotation.x, 0.0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
             _followCam.CallTurn();
         }
     }
+    //private void Turn()
+    //{
+    //    if (_isFacingRight)
+    //    {
+
+    //    }
+    //    else
+    //    {
+
+    //    }
+    //}
     private void StartJumpAnim()
     {
         //&& GroundCheck.Instance.GetCollisiosCollider().gameObject.layer != _collisionMask
@@ -113,8 +139,23 @@ public class PlayerVisual : MonoBehaviour
         }
     }
 
+    private void StartDashAnim()
+    {
+        if (_animator != null)
+        {
+            _animator.StopPlayback();
+            _animator.Play("Dash");
+        }
+    }
 
-
-
+    private void StartCrouchingAnim()
+    {
+        if (_animator != null)
+        {
+            _colliderStay.enabled = !_colliderStay.enabled;
+            _colliderCrouch.enabled = !_colliderCrouch.enabled;
+            _animator.SetBool(CROUCHING, Player.Instance.GetIsCrouching());
+        }
+    }
 }
 

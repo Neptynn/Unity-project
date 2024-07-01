@@ -5,30 +5,30 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
-public class GroundCheck : MonoBehaviour
+public class RoofCheck : MonoBehaviour
 {
-    [SerializeField] private LayerMask groundMask; 
-    [SerializeField] private bool _isGrounded = false;
+    [SerializeField] private LayerMask roofMask; 
+    [SerializeField] private bool _isRoofUp = false;
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && Player.Instance._rb.velocity.y < 0.001 && Player.Instance._rb.velocity.y > -0.001) || Player.Instance._rb.velocity.y == 0)
+        if ((((1 << collision.gameObject.layer) & roofMask) != 0 ))
         {
-            _isGrounded = true;
+            _isRoofUp = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (((1 << collision.gameObject.layer) & groundMask) != 0)
+        if (((1 << collision.gameObject.layer) & roofMask) != 0)
         {
-            _isGrounded = false;
+            _isRoofUp = false;
         }
 
     }
-    public bool GetIsGround()
+    public bool IsRoofUp()
     {
-        return _isGrounded;
+        return _isRoofUp;
     }
 
     //private void OnTriggerStay2D(Collider2D collision)
