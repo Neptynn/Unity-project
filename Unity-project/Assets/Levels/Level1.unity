@@ -585,7 +585,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8432965, y: 5.9505997, z: -9.9344635}
+  m_LocalPosition: {x: -6.483311, y: 5.9506598, z: -10.0655365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -824,7 +824,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701998078}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -833,7 +833,7 @@ Transform:
   - {fileID: 702090121}
   - {fileID: 880067240}
   m_Father: {fileID: 1511660247}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &701998080
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -924,9 +924,6 @@ MonoBehaviour:
   _colliderStay: {fileID: 701998083}
   _colliderCrouch: {fileID: 701998084}
   _isFacingRight: 1
-  _collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!61 &701998083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2664,7 +2661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511660243}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.18, y: 4.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2672,7 +2669,7 @@ Transform:
   - {fileID: 8853337}
   - {fileID: 701998079}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1511660248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,10 +2685,10 @@ MonoBehaviour:
   _groundCheck: {fileID: 1517982653}
   _isRoofUp: {fileID: 702090123}
   movingSpeed: 10
-  crochSpeed: 3
+  crochSpeed: 5
   jumpForce: 12
   maxJumpValue: 3
-  _dashImpulse: 15000
+  _dashImpulse: 5000
   _cooldownDashTime: 1
   _rb: {fileID: 0}
   startJumpAnim:
@@ -3467,7 +3464,7 @@ Transform:
   m_GameObject: {fileID: 1847257857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8433084, y: 5.5298824, z: -9.9344635}
+  m_LocalPosition: {x: -6.483309, y: 5.5298824, z: -10.0655365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

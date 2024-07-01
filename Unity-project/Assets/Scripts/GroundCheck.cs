@@ -31,14 +31,13 @@ public class GroundCheck : MonoBehaviour
         return _isGrounded;
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (Player.Instance._rb.velocity.y < 0.001 && Player.Instance._rb.velocity.y > -0.001)
-    //    {
-    //        Debug.Log(_isGrounded);
-    //        _isGrounded = true;
-    //    }
-    //}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && Player.Instance._rb.velocity.y < 0.001 && Player.Instance._rb.velocity.y > -0.001))
+        {
+            _isGrounded = true;
+        }
+    }
 
     //void OnDrawGizmos()
     //{

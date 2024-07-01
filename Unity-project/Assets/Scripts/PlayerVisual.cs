@@ -28,7 +28,7 @@ public class PlayerVisual : MonoBehaviour
     private PlayerFollowCam _followCam;
     private float _fallSpeedYDampingChangeTreshold;
 
-    [SerializeField] private LayerMask _collisionMask;
+    //[SerializeField] private LayerMask _collisionMask;
     private void Awake()
     {
         if (Instance == null)
@@ -65,8 +65,7 @@ public class PlayerVisual : MonoBehaviour
     private void FixedUpdate()
     {
         move = Player.Instance.GetMove();
-
-        if (_rb.velocity.x != 0)
+        if (move.x != 0)
         {
             TurnCheck();
         }
@@ -80,56 +79,39 @@ public class PlayerVisual : MonoBehaviour
             CameraManager.instance.LerpedFromPlayerFalling = false;
             CameraManager.instance.LerpYDamping(false);
         }
+
     }
 
-    //public void TurnCheck(Vector2 move)
-    //{
-    //    if (move.x > 0)
-    //    {
-    //        Vector3 _rotate = new Vector3(transform.rotation.x, 0.0f, transform.rotation.z);
-    //        transform.rotation = Quaternion.identity;
-    //        transform.rotation = Quaternion.Euler(_rotate);
-    //        _isFacingRight = true;
-    //        _followCam.CallTurn();
-    //    }
-    //    else if (move.x < 0)
-    //    {
-    //        Vector3 _rotate = new Vector3(transform.rotation.x, 180.0f, transform.rotation.z);
-    //        transform.rotation = Quaternion.identity;
-    //        transform.rotation = Quaternion.Euler(_rotate);
-    //        _isFacingRight = false;
-    //        _followCam.CallTurn();
-    //    }
-    //}
-
-    public void TurnCheck()
+    private void TurnCheck()
     {
-        if (move.x < 0 && _isFacingRight)
+        if (move.x > 0 && !_isFacingRight)
         {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 180.0f, transform.rotation.z);
+            Turn();
+        }
+        else if (move.x < 0 && _isFacingRight)
+        {
+            Turn();
+        }
+    }
+    private void Turn()
+    {
+        if (_isFacingRight)
+        {
+            Debug.Log(1);
+            Vector3 _rotate = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
             _followCam.CallTurn();
         }
-        else if(move.x > 0 && !_isFacingRight)
+        else
         {
-            Vector3 _rotate = new Vector3(transform.rotation.x, 0.0f, transform.rotation.z);
+            Debug.Log(2);
+            Vector3 _rotate = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
             _followCam.CallTurn();
         }
     }
-    //private void Turn()
-    //{
-    //    if (_isFacingRight)
-    //    {
-
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
     private void StartJumpAnim()
     {
         //&& GroundCheck.Instance.GetCollisiosCollider().gameObject.layer != _collisionMask

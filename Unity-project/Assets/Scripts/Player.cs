@@ -57,8 +57,7 @@ public class Player : MonoBehaviour
     {
         OnMove();
         isGrounded = _groundCheck.GetIsGround();
-        Debug.Log(_rb.velocity.y);
-        if (isGrounded || (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
+        if (isGrounded && (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
         {
             isGrounded = true;
 
@@ -74,9 +73,7 @@ public class Player : MonoBehaviour
     public void OnMove()
     {
         move = _playerInputAction.Player.Move.ReadValue<Vector2>();
-
-        //PlayerVisual.Instance.TurnCheck(move);
-        _rb.velocity = new Vector2(move.x * currentSpeed, _rb.velocity.y);
+        _rb.velocity = new Vector2(move.x * movingSpeed, _rb.velocity.y);
         isRunning = Mathf.Abs(move.x) > minMivingSpeed || Mathf.Abs(move.y) > minMivingSpeed;
     }
 
