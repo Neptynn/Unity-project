@@ -8,7 +8,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class CameraControlTrigger : MonoBehaviour
 {
     public CustomInspectorObject customInspectorObject;
-    private Player _player;
+    private PlayerModel _player;
     private Collider2D _coll;
     private bool _isTrigered;
     Collider2D _collision;
@@ -17,7 +17,7 @@ public class CameraControlTrigger : MonoBehaviour
     private void Start()
     {
         _coll = GetComponent<Collider2D>();
-        _player = Player.Instance;
+        _player = PlayerModel.Instance;
     }
     private void FixedUpdate()
     {

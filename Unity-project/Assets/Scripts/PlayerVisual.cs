@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-public class PlayerVisual : MonoBehaviour
+public class PlayerVisual : MonoBehaviour, IService
 {
     public static PlayerVisual Instance { get; private set; }
 
@@ -16,7 +16,9 @@ public class PlayerVisual : MonoBehaviour
     private const string Do_JUMP = "DoJump";
     private const string MOVE_X = "MoveX";
     private const string CROUCHING = "Crouching";
-    [SerializeField] private Player _player;
+    private const string UP_DOWN = "UpDown";
+    private const string ON_WALl = "OnWall"; 
+    [SerializeField] private PlayerModel _player;
     [SerializeField] private GameObject _cameraFollowGo;
 
     [SerializeField] private Collider2D _colliderStay;
@@ -55,16 +57,17 @@ public class PlayerVisual : MonoBehaviour
     {
         if (_animator != null)
         {
-            _animator.SetBool(RUNNING, Player.Instance.IsRunning());
-            _animator.SetBool(IS_GROUND, Player.Instance.IsGrounded());
-            _animator.SetBool(CANT_JUMP, Player.Instance.CantJump());
-            _animator.SetFloat(MOVE_X, Mathf.Abs(Player.Instance._rb.velocity.x));
+            _animator.SetBool(RUNNING, PlayerModel.Instance.IsRunning());
+            _animator.SetBool(IS_GROUND, PlayerModel.Instance.IsGrounded());
+            _animator.SetBool(CANT_JUMP, PlayerModel.Instance.CantJump());
+            _animator.SetFloat(MOVE_X, Mathf.Abs(PlayerModel.Instance._rb.velocity.x));
+            _animator.SetBool(ON_WALl, PlayerModel.Instance.GetISWall());
         }
 
     }
     private void FixedUpdate()
     {
-        move = Player.Instance.GetMove();
+        move = PlayerModel.Instance.GetMove();
         if (move.x != 0)
         {
             TurnCheck();
@@ -136,7 +139,17 @@ public class PlayerVisual : MonoBehaviour
         {
             _colliderStay.enabled = !_colliderStay.enabled;
             _colliderCrouch.enabled = !_colliderCrouch.enabled;
-            _animator.SetBool(CROUCHING, Player.Instance.GetIsCrouching());
+            _animator.SetBool(CROUCHING, PlayerModel.Instance.GetIsCrouching());
+        }
+    }
+    public void StartUpDownWallAnim(Vector2 moveY)
+    {
+        if (_animator != null)
+        {
+            _animator.SetFloat(UP_DOWN, moveY.y);
+            _animator.StopPlayback();
+            _animator.Play("UpDown");
+
         }
     }
 }

@@ -4,22 +4,27 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
-public class Player : MonoBehaviour
+public class PlayerModel : MonoBehaviour, IService
 {
-    public static Player Instance { get; private set; }
+    public static PlayerModel Instance { get; private set; }
     private PlayerInputActions _playerInputAction;
 
     [Header("Set in Inspector")]
     //[SerializeField] private PlayerVisual _playerVisual;
     [SerializeField] private GroundCheck _groundCheck;
     [SerializeField] private RoofCheck _isRoofUp;
+    [SerializeField] private WallCheck _wallCheck;
     [SerializeField] private float movingSpeed = 10f;
     [SerializeField] private float crochSpeed = 5f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private int maxJumpValue = 2;
     [SerializeField] private int _dashImpulse = 5000;
     [SerializeField] private float _cooldownDashTime = 2f;
+    [SerializeField] private float _upDownSpeed = 4f;
+    [SerializeField] private float _slideSpeed = -1;
+    [SerializeField] private float _gravityDef;
     private bool _lockDash = false;
     private float currentSpeed;
 
@@ -29,9 +34,11 @@ public class Player : MonoBehaviour
     private bool isRunning = false;
     private bool isGrounded = true;
     private bool isCrouch = false;
-   
+    private bool isWall = true;
+
     // private bool _isFacingRight = true;
     private Vector2 move;
+    private Vector2 moveY;
     private bool _jumpOffEnable = true;
     private bool isSKeyPressed = false;
 
@@ -39,6 +46,7 @@ public class Player : MonoBehaviour
     public UnityEvent startJumpAnim = new();
     public UnityEvent startDashAnim = new();
     public UnityEvent startCrouchingAnim = new();
+    public UnityEvent startUpDownWallAnim = new();
 
     private void Awake()
     {
@@ -52,17 +60,22 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         currentSpeed = movingSpeed;
     }
-    
+    private void Start()
+    {
+        _gravityDef = _rb.gravityScale;
+    }
     private void FixedUpdate()
     {
         OnMove();
         isGrounded = _groundCheck.GetIsGround();
+        isWall = _wallCheck.IsWall();
         if (isGrounded && (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
         {
             isGrounded = true;
 
             jumpCount = 0;
         }
+        OnWall();
 
     }
     private void Update()
@@ -101,6 +114,10 @@ public class Player : MonoBehaviour
     public bool GetIsCrouching()
     {
         return isCrouch;
+    }
+    public bool GetISWall()
+    {
+        return isWall;
     }
 
     public void OnJump()
@@ -169,9 +186,27 @@ public class Player : MonoBehaviour
     {
 
     }
+    private void OnWall()
+    {
+        if (isWall && !isGrounded)
+        {
+            moveY = _playerInputAction.Player.MoveWall.ReadValue<Vector2>();
+            PlayerVisual.Instance.StartUpDownWallAnim(moveY);
+            if (moveY.y == 0)
+            {
+                _rb.gravityScale = 0;
+                _rb.velocity = new Vector2(0, _slideSpeed);
 
-    //public bool GetIsFacingRight()
-    //{
-    //    return _isFacingRight;
-    //}
+            }
+            if (moveY.y > 0)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed/2);
+            }
+            else if (moveY.y != 0) { _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed);}
+        } else if(!isWall && !isGrounded)
+        {
+            _rb.gravityScale = _gravityDef;
+        }
+    }
+
 }

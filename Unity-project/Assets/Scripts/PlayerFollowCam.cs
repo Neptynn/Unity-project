@@ -22,7 +22,7 @@ public class PlayerFollowCam : MonoBehaviour
     }
     private void Start()
     {
- 
+
     }
     // Update is called once per frame
     void Update()
@@ -62,7 +62,7 @@ public class PlayerFollowCam : MonoBehaviour
     private float DetermineEndRotation()
     {
         _isFacingRight = !_isFacingRight;
-        if (_isFacingRight )
+        if (_isFacingRight)
         {
             return 0f;
         }

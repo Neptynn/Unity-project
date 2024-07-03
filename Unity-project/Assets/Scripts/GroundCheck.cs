@@ -12,7 +12,7 @@ public class GroundCheck : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && Player.Instance._rb.velocity.y < 0.001 && Player.Instance._rb.velocity.y > -0.001) || Player.Instance._rb.velocity.y == 0)
+        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && PlayerModel.Instance._rb.velocity.y < 0.001 && PlayerModel.Instance._rb.velocity.y > -0.001) || PlayerModel.Instance._rb.velocity.y == 0)
         {
             _isGrounded = true;
         }
@@ -33,7 +33,7 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && Player.Instance._rb.velocity.y < 0.001 && Player.Instance._rb.velocity.y > -0.001))
+        if ((((1 << collision.gameObject.layer) & groundMask) != 0 && PlayerModel.Instance._rb.velocity.y < 0.001 && PlayerModel.Instance._rb.velocity.y > -0.001))
         {
             _isGrounded = true;
         }
