@@ -1,3 +1,5 @@
+using CustomEventBus.Signals;
+using CustomEventBus;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +32,7 @@ public class PlayerVisual : MonoBehaviour, IService
     private PlayerFollowCam _followCam;
     private float _fallSpeedYDampingChangeTreshold;
 
+    private EventBus _eventBus;
     //[SerializeField] private LayerMask _collisionMask;
     private void Awake()
     {
@@ -46,11 +49,14 @@ public class PlayerVisual : MonoBehaviour, IService
         _player.startDashAnim.AddListener(StartDashAnim);
         _player.startCrouchingAnim.AddListener(StartCrouchingAnim);
 
+
     }
     private void Start()
     {
         _followCam = _cameraFollowGo.GetComponent<PlayerFollowCam>();
         _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
+
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
     }
 
     private void Update()
@@ -152,5 +158,20 @@ public class PlayerVisual : MonoBehaviour, IService
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _eventBus.Invoke(new CheckState());
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        _eventBus.Invoke(new CheckState());
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _eventBus.Invoke(new CheckState());
+    }
+
+
 }
 

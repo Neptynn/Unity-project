@@ -3,8 +3,8 @@ using UnityEngine.Events;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
-using Unity.VisualScripting;
+using CustomEventBus;
+using CustomEventBus.Signals;
 
 public class PlayerModel : MonoBehaviour, IService
 {
@@ -32,9 +32,10 @@ public class PlayerModel : MonoBehaviour, IService
     public Rigidbody2D _rb;
     private float minMivingSpeed = 0.1f;
     private bool isRunning = false;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
     private bool isCrouch = false;
-    private bool isWall = true;
+    private bool isRoofUp = false;
+    private bool isWall = false;
 
     // private bool _isFacingRight = true;
     private Vector2 move;
@@ -48,6 +49,8 @@ public class PlayerModel : MonoBehaviour, IService
     public UnityEvent startCrouchingAnim = new();
     public UnityEvent startUpDownWallAnim = new();
 
+
+    private EventBus _eventBus;
     private void Awake()
     {
         if (Instance == null)
@@ -59,16 +62,23 @@ public class PlayerModel : MonoBehaviour, IService
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
         currentSpeed = movingSpeed;
+
+        // _eventBus.Subscribe<IsRoofUpState>();
+
     }
     private void Start()
     {
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        _eventBus.Subscribe<IsGroundState>(UpdateIsGrounded);
+        _eventBus.Subscribe<IsWallState>(UpdateIsWall);
+        _eventBus.Subscribe<IsRoofUpState>(UpdateIsCrouch);
         _gravityDef = _rb.gravityScale;
     }
     private void FixedUpdate()
     {
         OnMove();
-        isGrounded = _groundCheck.GetIsGround();
-        isWall = _wallCheck.IsWall();
+        //isGrounded = _groundCheck.GetIsGround();
+        //isWall = _wallCheck.IsWall();
         if (isGrounded && (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
         {
             isGrounded = true;
@@ -81,6 +91,8 @@ public class PlayerModel : MonoBehaviour, IService
     private void Update()
     {
         isSKeyPressed = Keyboard.current.sKey.isPressed;
+
+        //Debug.Log("Update " + isWall);
     }
 
     public void OnMove()
@@ -170,7 +182,7 @@ public class PlayerModel : MonoBehaviour, IService
 
     private void OnCrouch()
     {
-        if (!_isRoofUp.IsRoofUp() && isGrounded)
+        if (!isRoofUp && isGrounded)
         {
             currentSpeed = crochSpeed;
             isCrouch = !isCrouch;
@@ -188,6 +200,7 @@ public class PlayerModel : MonoBehaviour, IService
     }
     private void OnWall()
     {
+       // Debug.Log("OnWall");
         if (isWall && !isGrounded)
         {
             moveY = _playerInputAction.Player.MoveWall.ReadValue<Vector2>();
@@ -209,4 +222,19 @@ public class PlayerModel : MonoBehaviour, IService
         }
     }
 
+    public void UpdateIsGrounded(IsGroundState signal)
+    {
+        Debug.Log(isGrounded);
+        isGrounded = signal.isGround;
+    }
+
+    public void UpdateIsWall(IsWallState signal)
+    {
+        isWall = signal.isWall;
+        Debug.Log(isWall);
+    }
+    public void UpdateIsCrouch(IsRoofUpState signal)
+    {
+        isRoofUp = signal.isRoofUp;
+    }
 }
