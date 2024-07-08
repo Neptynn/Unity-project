@@ -30,6 +30,7 @@ public class PlayerModel : MonoBehaviour, IService
 
     private int jumpCount = 0;
     public Rigidbody2D _rb;
+    private PlayerVisual _playerVisual;
     private float minMivingSpeed = 0.1f;
     private bool isRunning = false;
     private bool isGrounded = false;
@@ -40,7 +41,8 @@ public class PlayerModel : MonoBehaviour, IService
     // private bool _isFacingRight = true;
     private Vector2 move;
     private Vector2 moveY;
-    private bool _jumpOffEnable = true;
+    private bool _canJump = true;
+    private bool _canWallJump = false;
     private bool isSKeyPressed = false;
 
 
@@ -62,7 +64,7 @@ public class PlayerModel : MonoBehaviour, IService
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
         currentSpeed = movingSpeed;
-
+        _playerVisual = ServiceLocator.Current.Get<PlayerVisual>();
         // _eventBus.Subscribe<IsRoofUpState>();
 
     }
@@ -72,20 +74,24 @@ public class PlayerModel : MonoBehaviour, IService
         _eventBus.Subscribe<IsGroundState>(UpdateIsGrounded);
         _eventBus.Subscribe<IsWallState>(UpdateIsWall);
         _eventBus.Subscribe<IsRoofUpState>(UpdateIsCrouch);
+        _eventBus.Subscribe<PushSignal>(LadgeGo);
+        _eventBus.Subscribe<StartClimb>(StartAnimClimb);
         _gravityDef = _rb.gravityScale;
+
     }
     private void FixedUpdate()
     {
+        blockMove = _playerVisual.GetBlokMove();
         OnMove();
         //isGrounded = _groundCheck.GetIsGround();
         //isWall = _wallCheck.IsWall();
-        if (isGrounded && (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001))
+        if ((isGrounded && (_rb.velocity.y < 0.0001 && _rb.velocity.y > -0.0001)) || _canWallJump)
         {
-            isGrounded = true;
-
+            _canWallJump = false;
             jumpCount = 0;
         }
         OnWall();
+        //Wall();
 
     }
     private void Update()
@@ -97,9 +103,12 @@ public class PlayerModel : MonoBehaviour, IService
 
     public void OnMove()
     {
-        move = _playerInputAction.Player.Move.ReadValue<Vector2>();
-        _rb.velocity = new Vector2(move.x * movingSpeed, _rb.velocity.y);
-        isRunning = Mathf.Abs(move.x) > minMivingSpeed || Mathf.Abs(move.y) > minMivingSpeed;
+        if (!blockMove)
+        {
+            move = _playerInputAction.Player.Move.ReadValue<Vector2>();
+            _rb.velocity = new Vector2(move.x * movingSpeed, _rb.velocity.y);
+            isRunning = Mathf.Abs(move.x) > minMivingSpeed || Mathf.Abs(move.y) > minMivingSpeed;
+        }
     }
 
     public bool IsRunning()
@@ -115,9 +124,9 @@ public class PlayerModel : MonoBehaviour, IService
         return jumpCount >= maxJumpValue - 1;
     }
 
-    public void ChangeIsGround()
+    public bool GetIsGround()
     {
-        isGrounded = true;
+        return isGrounded;
     }
     public Vector2 GetMove()
     {
@@ -134,7 +143,7 @@ public class PlayerModel : MonoBehaviour, IService
 
     public void OnJump()
     {
-        if (!isSKeyPressed && (isGrounded || ++jumpCount < maxJumpValue))
+        if (!isSKeyPressed && (isGrounded || ++jumpCount < maxJumpValue) && !blockMove)
         {
             startJumpAnim?.Invoke();
             //_rb.AddForce(Vector2.up * jumpForce);
@@ -144,7 +153,7 @@ public class PlayerModel : MonoBehaviour, IService
     }
     public void OnJumpDown()
     {
-        if(_jumpOffEnable)
+        if (_canJump)
         {
             StartCoroutine("JumpOff");
         }
@@ -152,16 +161,16 @@ public class PlayerModel : MonoBehaviour, IService
     }
     IEnumerator JumpOff()
     {
-        _jumpOffEnable = false;
+        _canJump = false;
         Physics2D.IgnoreLayerCollision(10, 11, true);
         yield return new WaitForSeconds(0.3f);
         Physics2D.IgnoreLayerCollision(10, 11, false);
-        _jumpOffEnable = true;
+        _canJump = true;
     }
 
     private void OnDash()
     {
-        if(!_lockDash && !isCrouch)
+        if (!_lockDash && !isCrouch && !blockMove)
         {
             startDashAnim?.Invoke();
             _lockDash = true;
@@ -182,13 +191,14 @@ public class PlayerModel : MonoBehaviour, IService
 
     private void OnCrouch()
     {
-        if (!isRoofUp && isGrounded)
+        if (!isRoofUp && isGrounded && !blockMove)
         {
+
             currentSpeed = crochSpeed;
             isCrouch = !isCrouch;
             startCrouchingAnim?.Invoke();
         }
-        if(!isCrouch)
+        if (!isCrouch)
         {
             currentSpeed = movingSpeed;
         }
@@ -200,41 +210,76 @@ public class PlayerModel : MonoBehaviour, IService
     }
     private void OnWall()
     {
-       // Debug.Log("OnWall");
-        if (isWall && !isGrounded)
+        // Debug.Log("OnWall");
+        if (isWall && !isGrounded && !blockMove)
         {
             moveY = _playerInputAction.Player.MoveWall.ReadValue<Vector2>();
             PlayerVisual.Instance.StartUpDownWallAnim(moveY);
-            if (moveY.y == 0)
+            if (moveY.y == 0 && _rb.velocity.y < _slideSpeed)
             {
-                _rb.gravityScale = 0;
                 _rb.velocity = new Vector2(0, _slideSpeed);
-
             }
             if (moveY.y > 0)
             {
-                _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed/2);
+                _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed / 2);
             }
-            else if (moveY.y != 0) { _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed);}
-        } else if(!isWall && !isGrounded)
-        {
-            _rb.gravityScale = _gravityDef;
+            else if (moveY.y != 0) { _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed); }
         }
     }
 
     public void UpdateIsGrounded(IsGroundState signal)
     {
-        Debug.Log(isGrounded);
         isGrounded = signal.isGround;
     }
 
     public void UpdateIsWall(IsWallState signal)
     {
         isWall = signal.isWall;
-        Debug.Log(isWall);
+        _canWallJump = signal.canWallJump;
     }
     public void UpdateIsCrouch(IsRoofUpState signal)
     {
         isRoofUp = signal.isRoofUp;
+    }
+
+    //[SerializeField] private float distance = 1f;
+    //private float _dir = 1;
+    //private void Wall()
+    //{
+    //    _dir = _playerVisual.GetIsFacingRight() ? 1 : -1;
+
+    //    Physics2D.queriesStartInColliders = false;
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x * _dir, distance);
+
+    //    if(!isGrounded && hit.collider != null)
+    //    {
+    //        if (_rb.velocity.y < _slideSpeed)
+    //            {
+    //            _rb.velocity = new Vector2(0, _slideSpeed);
+    //        }
+    //    }
+    //}
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawLine(transform.position + Vector3.up, transform.position + Vector3.up + Vector3.right * transform.localScale.x * distance * _dir);
+    //}
+    public Transform dopPosition;
+    public float dopRadius = 0.04f;
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(dopPosition.position, dopRadius);
+    }
+    private void LadgeGo(PushSignal signal)
+    {
+        //transform.position = new Vector3(dopPosition.position.x, dopPosition.position.y, dopPosition.position.z);
+        //isGrounded = false;
+    }
+    public bool blockMove;
+    private void StartAnimClimb(StartClimb signal)
+    {
+        transform.position = new Vector3(dopPosition.position.x, dopPosition.position.y, dopPosition.position.z);
     }
 }

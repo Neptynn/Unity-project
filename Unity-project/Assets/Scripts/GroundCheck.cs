@@ -9,7 +9,7 @@ using CustomEventBus.Signals;
 public class GroundCheck : MonoBehaviour
 {
     [SerializeField] private LayerMask groundMask; 
-    [SerializeField] private bool _isGrounded = false;
+    [SerializeField] private bool _isGrounded = true;
     private EventBus _eventBus;
     private void Start()
     {

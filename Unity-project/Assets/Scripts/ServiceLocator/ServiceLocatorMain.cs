@@ -24,6 +24,8 @@ public class ServiceLocatorMain : MonoBehaviour
         ServiceLocator.Initialize();
 
         ServiceLocator.Current.Register(_eventBus);
+        ServiceLocator.Current.Register(_playerModel);
+        ServiceLocator.Current.Register(_playerVisual);
     }
 
     private void Init()

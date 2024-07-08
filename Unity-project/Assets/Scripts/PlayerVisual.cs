@@ -19,7 +19,7 @@ public class PlayerVisual : MonoBehaviour, IService
     private const string MOVE_X = "MoveX";
     private const string CROUCHING = "Crouching";
     private const string UP_DOWN = "UpDown";
-    private const string ON_WALl = "OnWall"; 
+    private const string ON_WALl = "OnWall";
     [SerializeField] private PlayerModel _player;
     [SerializeField] private GameObject _cameraFollowGo;
 
@@ -57,6 +57,7 @@ public class PlayerVisual : MonoBehaviour, IService
         _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
 
         _eventBus = ServiceLocator.Current.Get<EventBus>();
+        _eventBus.Subscribe<StartClimb>(StartClimb);
     }
 
     private void Update()
@@ -106,7 +107,6 @@ public class PlayerVisual : MonoBehaviour, IService
     {
         if (_isFacingRight)
         {
-            Debug.Log(1);
             Vector3 _rotate = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
@@ -114,7 +114,6 @@ public class PlayerVisual : MonoBehaviour, IService
         }
         else
         {
-            Debug.Log(2);
             Vector3 _rotate = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(_rotate);
             _isFacingRight = !_isFacingRight;
@@ -161,17 +160,38 @@ public class PlayerVisual : MonoBehaviour, IService
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _eventBus.Invoke(new CheckState());
+        _eventBus.Invoke(new CheckState(true));
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        _eventBus.Invoke(new CheckState());
+        _eventBus.Invoke(new CheckState(false));
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        _eventBus.Invoke(new CheckState());
+
+        _eventBus.Invoke(new CheckState(false));
     }
 
+    public bool GetIsFacingRight()
+    {
+        return _isFacingRight;
+    }
 
+    public void LadgeGo()
+    {
+        _eventBus.Invoke(new PushSignal());
+    }
+    public bool blockMoveX;
+    public bool GetBlokMove()
+    {
+        return blockMoveX;
+    }
+
+    private void StartClimb(StartClimb signal)
+    {
+        blockMoveX = true;
+        _rb.velocity = Vector2.zero;
+        _animator.Play("Climb");
+    }
 }
 

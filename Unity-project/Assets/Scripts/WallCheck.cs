@@ -8,7 +8,9 @@ using UnityEngine;
 public class WallCheck : MonoBehaviour
 {
     [SerializeField] private LayerMask wallMask;
-    [SerializeField] private bool _isWall = false;
+    private bool _isWall = false;
+    private bool _canWallJump;
+
     private EventBus _eventBus;
     private void Start()
     {
@@ -19,6 +21,7 @@ public class WallCheck : MonoBehaviour
     {
         if ((((1 << collision.gameObject.layer) & wallMask) != 0))
         {
+            _canWallJump = true;
             _isWall = true;
         }
     }
@@ -26,6 +29,7 @@ public class WallCheck : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & wallMask) != 0)
         {
+            _canWallJump = true;
             _isWall = false;
         }
 
@@ -36,7 +40,8 @@ public class WallCheck : MonoBehaviour
     }
     private void PushIsWall(CheckState signal)
     {
-        _eventBus.Invoke(new IsWallState(_isWall));
+        _canWallJump = signal.flagState && _isWall;
+        _eventBus.Invoke(new IsWallState(_isWall, _canWallJump));
     }
 }
 
