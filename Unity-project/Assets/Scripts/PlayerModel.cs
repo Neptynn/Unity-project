@@ -9,13 +9,13 @@ using CustomEventBus.Signals;
 public class PlayerModel : MonoBehaviour, IService
 {
     public static PlayerModel Instance { get; private set; }
-    private PlayerInputActions _playerInputAction;
+    private Controls _playerInputAction;
 
     [Header("Set in Inspector")]
     //[SerializeField] private PlayerVisual _playerVisual;
-    [SerializeField] private GroundCheck _groundCheck;
+    //[SerializeField] private GroundCheck _groundCheck;
     [SerializeField] private RoofCheck _isRoofUp;
-    [SerializeField] private WallCheck _wallCheck;
+    //[SerializeField] private WallCheck _wallCheck;
     [SerializeField] private float movingSpeed = 10f;
     [SerializeField] private float crochSpeed = 5f;
     [SerializeField] private float jumpForce = 300f;
@@ -60,7 +60,7 @@ public class PlayerModel : MonoBehaviour, IService
             Instance = this;
         }
 
-        _playerInputAction = new PlayerInputActions();
+        _playerInputAction = new Controls();
         _playerInputAction.Enable();
         _rb = GetComponent<Rigidbody2D>();
         currentSpeed = movingSpeed;
@@ -90,7 +90,7 @@ public class PlayerModel : MonoBehaviour, IService
             _canWallJump = false;
             jumpCount = 0;
         }
-        OnWall();
+        //OnWall();
         //Wall();
 
     }
@@ -176,12 +176,12 @@ public class PlayerModel : MonoBehaviour, IService
             _lockDash = true;
             Invoke("LockDash", _cooldownDashTime);
             _rb.velocity = new Vector2(0.1f, 0.1f);
-            if (PlayerVisual.Instance.transform.rotation.y > 0)
-            {
-                _rb.AddForce(Vector2.left * _dashImpulse);
+            //if (PlayerVisual.Instance.transform.rotation.y > 0)
+            //{
+            //    _rb.AddForce(Vector2.left * _dashImpulse);
 
-            }
-            else { _rb.AddForce(Vector2.right * _dashImpulse); }
+            //}
+            //else { _rb.AddForce(Vector2.right * _dashImpulse); }
         }
     }
     private void LockDash()
@@ -208,24 +208,24 @@ public class PlayerModel : MonoBehaviour, IService
     {
 
     }
-    private void OnWall()
-    {
-        // Debug.Log("OnWall");
-        if (isWall && !isGrounded && !blockMove)
-        {
-            moveY = _playerInputAction.Player.MoveWall.ReadValue<Vector2>();
-            PlayerVisual.Instance.StartUpDownWallAnim(moveY);
-            if (moveY.y == 0 && _rb.velocity.y < _slideSpeed)
-            {
-                _rb.velocity = new Vector2(0, _slideSpeed);
-            }
-            if (moveY.y > 0)
-            {
-                _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed / 2);
-            }
-            else if (moveY.y != 0) { _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed); }
-        }
-    }
+    //private void OnWall()
+    //{
+    //    // Debug.Log("OnWall");
+    //    if (isWall && !isGrounded && !blockMove)
+    //    {
+    //        moveY = _playerInputAction.Player.MoveWall.ReadValue<Vector2>();
+    //        PlayerVisual.Instance.StartUpDownWallAnim(moveY);
+    //        if (moveY.y == 0 && _rb.velocity.y < _slideSpeed)
+    //        {
+    //            _rb.velocity = new Vector2(0, _slideSpeed);
+    //        }
+    //        if (moveY.y > 0)
+    //        {
+    //            _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed / 2);
+    //        }
+    //        else if (moveY.y != 0) { _rb.velocity = new Vector2(_rb.velocity.x, moveY.y * _upDownSpeed); }
+    //    }
+    //}
 
     public void UpdateIsGrounded(IsGroundState signal)
     {

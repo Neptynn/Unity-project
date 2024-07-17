@@ -16,14 +16,14 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Background
   - Player
   - Platform
   - Ground
   - Enemy
   - Items
-  - 
-  - 
+  - CheckPoint
+  - FallPlatform
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1514751337
+    locked: 0
   - name: Ground
     uniqueID: 3694807351
     locked: 0

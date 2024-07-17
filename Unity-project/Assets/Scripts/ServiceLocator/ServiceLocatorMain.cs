@@ -5,7 +5,7 @@ using CustomEventBus;
 
 public class ServiceLocatorMain : MonoBehaviour
 {
-    [SerializeField] private PlayerModel _playerModel;
+    [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private PlayerVisual _playerVisual;
     private EventBus _eventBus;
     private void Awake()
@@ -13,7 +13,7 @@ public class ServiceLocatorMain : MonoBehaviour
         ServiceLocator.Initialize();
 
         _eventBus = new EventBus();
-        ServiceLocator.Current.Register<PlayerModel>(_playerModel);
+        ServiceLocator.Current.Register<PlayerMovement>(_playerMovement);
         ServiceLocator.Current.Register<PlayerVisual>(_playerVisual);
 
         RegisterServices();
@@ -24,7 +24,7 @@ public class ServiceLocatorMain : MonoBehaviour
         ServiceLocator.Initialize();
 
         ServiceLocator.Current.Register(_eventBus);
-        ServiceLocator.Current.Register(_playerModel);
+        ServiceLocator.Current.Register(_playerMovement);
         ServiceLocator.Current.Register(_playerVisual);
     }
 
