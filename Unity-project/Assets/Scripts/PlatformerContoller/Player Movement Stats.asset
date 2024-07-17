@@ -59,7 +59,7 @@ MonoBehaviour:
   DebugShowIsGroundedBox: 1
   DebagShowHeadBumpBox: 1
   DebagShowWallHitBox: 1
-  ShowWalkJumpArc: 1
+  ShowWalkJumpArc: 0
   StopOnCollision: 1
   DrawRight: 1
   ArcResolution: 20

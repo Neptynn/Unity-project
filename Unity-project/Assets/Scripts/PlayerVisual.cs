@@ -18,8 +18,8 @@ public class PlayerVisual : MonoBehaviour, IService
     private const string UP_DOWN = "UpDown";
     private const string ON_WALL = "OnWall";
 
-    [SerializeField] private Collider2D _colliderStay;
-    [SerializeField] private Collider2D _colliderCrouch;
+    //[SerializeField] private Collider2D _colliderStay;
+    //[SerializeField] private Collider2D _colliderCrouch;
 
     private EventBus _eventBus;
     //[SerializeField] private LayerMask _collisionMask;
@@ -88,8 +88,8 @@ public class PlayerVisual : MonoBehaviour, IService
     {
         if (_animator != null)
         {
-            _colliderStay.enabled = !_colliderStay.enabled;
-            _colliderCrouch.enabled = !_colliderCrouch.enabled;
+            //_colliderStay.enabled = !_colliderStay.enabled;
+            //_colliderCrouch.enabled = !_colliderCrouch.enabled;
             _animator.SetBool(CROUCHING, PlayerModel.Instance.GetIsCrouching());
         }
     }

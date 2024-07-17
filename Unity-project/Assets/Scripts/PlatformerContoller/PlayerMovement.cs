@@ -8,6 +8,8 @@ using CustomEventBus;
 
 public class PlayerMovement : MonoBehaviour, IService
 {
+    #region Vars
+
     [Header("Referencies")]
     public PlayerMovementStats MoveStats;
     [SerializeField] private Collider2D _feetColl;
@@ -84,6 +86,10 @@ public class PlayerMovement : MonoBehaviour, IService
     private float _dashFastFallReleaseSpeed;
 
     private TrailDash _trailDash;
+
+    #endregion
+
+    #region Main
     private void Awake()
     {
         _trailDash = GetComponentInChildren<TrailDash>();
@@ -178,6 +184,8 @@ public class PlayerMovement : MonoBehaviour, IService
             DrawJumpArc(MoveStats.MaxWalkSpeed, Color.white);
         }
     }
+
+    #endregion
 
     #region Movement
 
