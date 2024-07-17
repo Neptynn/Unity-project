@@ -1734,9 +1734,9 @@ MonoBehaviour:
   - {fileID: 1847257858}
   - {fileID: 1573521880}
   - {fileID: 1622585465}
-  _fallPanAmount: 0.2
+  _fallPanAmount: 0.25
   _fallYPanTime: 0.35
-  _fallSpeedDampingChargeTheshold: -7
+  _fallSpeedDampingChargeTheshold: -15
 --- !u!4 &758259974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3233986731923117467, guid: eeeac5e3dae4c044bb0db49f560f6981, type: 3}

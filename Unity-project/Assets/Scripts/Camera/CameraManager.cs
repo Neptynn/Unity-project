@@ -41,8 +41,8 @@ public class CameraManager : MonoBehaviour
                 _framingTransposer = _currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
         }
-        _nornYPanAmount = _framingTransposer.m_YDamping;
 
+        _nornYPanAmount = _framingTransposer.m_YDamping;
         //set the starting position of the tracked object offset
         _startindTrackedObjectOffset = _framingTransposer.m_TrackedObjectOffset;
     }
@@ -52,8 +52,6 @@ public class CameraManager : MonoBehaviour
     public void LerpYDamping(bool isPlayerFalling)
     {
         _lerpYPanCoroutine = StartCoroutine(LerpYAction(isPlayerFalling));
-
-        //LeanTween.
     }
 
     private IEnumerator LerpYAction(bool isPlayerFalling)
