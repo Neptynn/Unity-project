@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEditor;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class CameraControlTrigger : MonoBehaviour
 {
     public CustomInspectorObject customInspectorObject;
-    private PlayerModel _player;
     private Collider2D _coll;
     private bool _isTrigered;
     Collider2D _collision;
-    private float _speed = 0.01f;
+    //private float _speed = 0.01f;
 
     [SerializeField] PlayerMovement playerMovement;
 
     private void Start()
     {
         _coll = GetComponent<Collider2D>();
-        _player = PlayerModel.Instance;
     }
     private void FixedUpdate()
     {
@@ -91,8 +87,9 @@ public enum PanDirection
     Left,
     Right
 }
-
+#if DEBUG
 [CustomEditor(typeof(CameraControlTrigger))]
+
 public class MyScriptEditor : Editor
 {
     CameraControlTrigger cameraControlTrigger;
@@ -127,3 +124,4 @@ public class MyScriptEditor : Editor
         }
     }
 }
+#endif

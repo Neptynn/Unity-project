@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace CustomEventBus.Signals
 {
     public class IsGroundState
@@ -43,4 +45,21 @@ namespace CustomEventBus.Signals
     public class StartClimb
     {
     }
+    public class PlayerObj
+    {
+        public readonly PlayerMovement PlayerMovement;
+        public PlayerObj(PlayerMovement playerMovement)
+        {
+            PlayerMovement = playerMovement;
+        }
+    }
+    public class LevelBoundaries
+    {
+        public readonly CompositeCollider2D level;
+        public LevelBoundaries(CompositeCollider2D Level)
+        {
+            level = Level;
+        }
+    }
+
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3010352540506453034}
   - component: {fileID: 1331645932557404412}
-  - component: {fileID: 5855237810937326385}
+  - component: {fileID: -1209048159951590270}
   m_Layer: 10
   m_Name: PlayerTrail
   m_TagString: Player
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5855237810937326385
+--- !u!114 &-1209048159951590270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,4 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveStats: {fileID: 11400000, guid: 01885435ccfeb1e4c908d91a67b6060e, type: 2}
-  alpha: 0.15
+  alpha: 0

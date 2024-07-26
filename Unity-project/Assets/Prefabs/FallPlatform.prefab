@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alphaInterval: 0.05
-  disappearedTime: 0.5
+  disappearedTime: 1

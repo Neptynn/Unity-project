@@ -2,6 +2,8 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CustomEventBus.Signals;
+using CustomEventBus;
 
 public class PlayerFollowCam : MonoBehaviour
 {
@@ -15,16 +17,27 @@ public class PlayerFollowCam : MonoBehaviour
     private PlayerVisual _playerVisual;
     private bool _isFacingRight;
     [SerializeField] private PlayerMovement _playerMovement;
+    private EventBus _eventBus;
 
     private void Start()
     {
+        // _playerMovement = ServiceLocator.Current.Get<PlayerMovement>();
+
+        _eventBus = ServiceLocator.Current.Get<EventBus>();
+        _eventBus.Subscribe<PlayerObj>(PlayerObj);
 
     }
+    private void PlayerObj(PlayerObj playerObj)
+    {
+        _playerMovement = playerObj.PlayerMovement;
+    }
+
     // Update is called once per frame
     void Update()
     {
         _playerMovement.GetIsFacingRight();
-        transform.position = _playerTransform.position;
+
+        transform.position = _playerMovement.transform.position;
     }
 
 

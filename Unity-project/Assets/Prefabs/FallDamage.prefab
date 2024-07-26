@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7808733014917571976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61, y: -0, z: 0.08961403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68,8 +68,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.6039968, y: 0}
-  - {x: 5.4254227, y: -0.0036534015}
+  - {x: 5.7917056, y: -2.856579}
+  - {x: 10.986178, y: -2.8565788}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -86,4 +86,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ef1d00f84d01b4fb2ef6f7b3372d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  safeGroundCheckpointSaver: {fileID: 0}
