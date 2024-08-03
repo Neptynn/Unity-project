@@ -17,7 +17,6 @@ public class SafeGroundCheckpointSaver : MonoBehaviour
         {
             //Збереження нової позиції для чекпоінта
             SafeGroundLocation = new Vector2(collision.bounds.center.x, collision.bounds.min.y);
-            Debug.Log(SafeGroundLocation);
         }
     }
 

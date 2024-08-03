@@ -62,4 +62,8 @@ namespace CustomEventBus.Signals
         }
     }
 
+    public class GetPlayer
+    {
+    }
+
 }

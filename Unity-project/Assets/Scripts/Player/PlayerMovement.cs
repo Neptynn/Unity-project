@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour, IService
 {
     #region Vars
 
+    public static PlayerMovement Instance {  get; private set; }
+
     [Header("Referencies")]
     public PlayerMovementStats MoveStats;
     [SerializeField] private Collider2D _feetColl;
@@ -92,6 +94,11 @@ public class PlayerMovement : MonoBehaviour, IService
     #region Main
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+
         _trailDash = GetComponentInChildren<TrailDash>();
         _isFacingRight = true;
 
@@ -102,6 +109,8 @@ public class PlayerMovement : MonoBehaviour, IService
     {
         _eventBus = ServiceLocator.Current.Get<EventBus>();
         _eventBus.Invoke(new PlayerObj(this));
+        _eventBus.Subscribe<GetPlayer>(GetPlayer);
+
         _fallSpeedYDampingChangeTreshold = CameraManager.instance._fallSpeedDampingChargeTheshold;
     }
     private void Update()
@@ -183,6 +192,11 @@ public class PlayerMovement : MonoBehaviour, IService
         {
             DrawJumpArc(MoveStats.MaxWalkSpeed, Color.white);
         }
+    }
+
+    private void GetPlayer(GetPlayer signal)
+    {
+        _eventBus.Invoke(new PlayerObj(this));
     }
 
     #endregion

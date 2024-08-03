@@ -1,0 +1,2371 @@
+fileFormatVersion: 2
+guid: 17be9160366794e4eb45e4d4f16cd31f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    addSortingGroup: 0
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638582149778290566
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Bear_Frame_0
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 3148
+      width: 225
+      height: 165
+    spriteID: 17de667e74c5d8c4e80bdac5c42c29d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 2698}
+  - name: Bear_Frame_1
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 3321
+      width: 225
+      height: 165
+    spriteID: 7a3f823c68fc8144f9f96b5f4cdd4d71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 2871}
+  - name: Bear_Frame_2
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 3494
+      width: 225
+      height: 165
+    spriteID: 696ffee7355f2e144a0ca8f6548a27a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 3044}
+  - name: Bear_Frame_3
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1012
+      width: 225
+      height: 170
+    spriteID: feafe90281f52f64dba48d112300f3ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 562}
+  - name: Bear_Frame_4
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 2285
+      width: 225
+      height: 175
+    spriteID: d0daeda2302da8b458ddc23d90d2c00c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 1835}
+  - name: Bear_Frame_5
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 969
+      width: 225
+      height: 180
+    spriteID: 4dda48dbcbf946248a445202018bfe88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 519}
+  - name: Bear_Frame_6
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3734
+      width: 225
+      height: 185
+    spriteID: de64d4e9771e78644b678f9d3881597b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -143, y: 3284}
+  - name: Bear_Frame_7
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 4
+      width: 225
+      height: 185
+    spriteID: 655a372125c61774d96f4bdcc4294dd6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: -446}
+  - name: Bear_Frame_8
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 197
+      width: 225
+      height: 185
+    spriteID: 50e504c705c02d540a93e2a05cbf099b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: -253}
+  - name: Bear_Frame_9
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 2468
+      width: 225
+      height: 175
+    spriteID: 890cf6213312bfc4f9635e8eb534a868
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2018}
+  - name: Bear_Frame_10
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1190
+      width: 225
+      height: 170
+    spriteID: a86fe0439d3e16641ac8286beddb19eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 740}
+  - name: Bear_Frame_11
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 3667
+      width: 225
+      height: 165
+    spriteID: 36205725034fc844d9bf205f60facfbf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 3217}
+  - name: Bear_Frame_12
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 3840
+      width: 225
+      height: 165
+    spriteID: 9d344849051df834da7256689ba9354a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 3390}
+  - name: Bear_Frame_13
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1538
+      y: 4
+      width: 225
+      height: 165
+    spriteID: e18cb18c77ff82342b92a4d15d9eee8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 943, y: -446}
+  - name: Bear_Frame_14
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1368
+      width: 225
+      height: 170
+    spriteID: b91a9486ece34254ab6b79087ef27e71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 918}
+  - name: Bear_Frame_15
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 2651
+      width: 225
+      height: 175
+    spriteID: 55dbe235361f09d4582b6b6538830258
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2201}
+  - name: Bear_Frame_16
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 1157
+      width: 225
+      height: 180
+    spriteID: d1d4d1ce2a7716542b1b3940d9ae4545
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 707}
+  - name: Bear_Frame_17
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 390
+      width: 225
+      height: 185
+    spriteID: 8564a0ce20289a14399b0163311c4261
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: -60}
+  - name: Bear_Frame_18
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 583
+      width: 225
+      height: 185
+    spriteID: 0aa1feb424285a141af153873da85a60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 133}
+  - name: Bear_Frame_19
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 776
+      width: 225
+      height: 185
+    spriteID: 4ca03e4ac38e5824f825e5afa2432b21
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 326}
+  - name: Bear_Frame_20
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 1345
+      width: 225
+      height: 180
+    spriteID: 543d09b42a76098408bc146f51a2435a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 895}
+  - name: Bear_Frame_21
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 2834
+      width: 225
+      height: 175
+    spriteID: b9ab64a00c42ce8489bba7f1c85c0b6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2384}
+  - name: Bear_Frame_22
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1546
+      width: 225
+      height: 170
+    spriteID: eb4ef2bc3e7046142baace9fb7e2c05f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1096}
+  - name: Bear_Frame_23
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1724
+      width: 225
+      height: 170
+    spriteID: 910628bf410bb8d4397a42ff92871731
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1274}
+  - name: Bear_Frame_24
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1538
+      y: 177
+      width: 225
+      height: 165
+    spriteID: a6af5638b314c7548b34c0dd04c1e665
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 943, y: -273}
+  - name: Bear_Frame_25
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 1902
+      width: 225
+      height: 170
+    spriteID: 1f430b7f78670d24d969d3ff93378547
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1452}
+  - name: Bear_Frame_26
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 3017
+      width: 225
+      height: 175
+    spriteID: f1a89c32f11267545b3cef5a1596345d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2567}
+  - name: Bear_Frame_27
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 1533
+      width: 225
+      height: 180
+    spriteID: 9bf59ba3784c1fb41bf52cd65f2f9d5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 1083}
+  - name: Bear_Frame_28
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 3200
+      width: 225
+      height: 175
+    spriteID: 18e5ce02ce3f1134d9579744ffaacd37
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2750}
+  - name: Bear_Frame_29
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2080
+      width: 225
+      height: 170
+    spriteID: 14040c4db3673d541882290d40455c67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1630}
+  - name: Bear_Frame_30
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1538
+      y: 350
+      width: 225
+      height: 165
+    spriteID: 370322dadb1c0bb4e98cc816d5191cc0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 943, y: -100}
+  - name: Bear_Frame_31
+    originalName: 
+    pivot: {x: 0.50980395, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 592
+      y: 2315
+      width: 255
+      height: 170
+    spriteID: 0f39fe26d7f89b540a2b3b7a3723f91d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 27, y: 1865}
+  - name: Bear_Frame_32
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 3383
+      width: 225
+      height: 175
+    spriteID: f8d94c74efd83064498166d4afaaaeef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 2933}
+  - name: Bear_Frame_33
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 1721
+      width: 225
+      height: 180
+    spriteID: bdf5d4ea5bb6dbb4196b0c4daf05186d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 1271}
+  - name: Bear_Frame_34
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 3566
+      width: 225
+      height: 175
+    spriteID: 0d057b96607fddb49bbc114151198733
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 3116}
+  - name: Bear_Frame_35
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 3749
+      width: 225
+      height: 175
+    spriteID: 253ff46c8670f0348891fe3ad433d4f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 3299}
+  - name: Bear_Frame_36
+    originalName: 
+    pivot: {x: 0.45454547, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 829
+      width: 220
+      height: 175
+    spriteID: 31bce03c8aea2694da36d44a0de9a138
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 379}
+  - name: Bear_Frame_37
+    originalName: 
+    pivot: {x: 0.53333336, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3423
+      width: 225
+      height: 190
+    spriteID: 2d79658b38cc00e49a4228601022f954
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -123, y: 2973}
+  - name: Bear_Frame_38
+    originalName: 
+    pivot: {x: 0.5208333, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 577
+      y: 2513
+      width: 240
+      height: 195
+    spriteID: cd356900801748046979708271e54b40
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7, y: 2063}
+  - name: Bear_Frame_39
+    originalName: 
+    pivot: {x: 0.20481928, y: 0.102564104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 462
+      y: 2716
+      width: 415
+      height: 195
+    spriteID: 8ee93850e057f2d43ba794907e4f6c71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -148, y: 2286}
+  - name: Bear_Frame_40
+    originalName: 
+    pivot: {x: 0.20481928, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3543
+      width: 415
+      height: 175
+    spriteID: daf6bd81912ed8c42abff74c66557fd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -606, y: 3093}
+  - name: Bear_Frame_41
+    originalName: 
+    pivot: {x: 0.2, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3726
+      width: 425
+      height: 170
+    spriteID: 50ba1183ed9e65242bafac14e72249f1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -606, y: 3276}
+  - name: Bear_Frame_42
+    originalName: 
+    pivot: {x: 0.2159091, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3137
+      width: 440
+      height: 190
+    spriteID: 76fb4d0ef8232554a8bce6f6fc55abbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -596, y: 2687}
+  - name: Bear_Frame_43
+    originalName: 
+    pivot: {x: 0.23529412, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 462
+      y: 2939
+      width: 425
+      height: 190
+    spriteID: 27679432f16f95c4690d70da429bf063
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -133, y: 2489}
+  - name: Bear_Frame_44
+    originalName: 
+    pivot: {x: 0.22222222, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2939
+      width: 450
+      height: 190
+    spriteID: d527078328351ad4cb9b0bee4cbb9994
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 2489}
+  - name: Bear_Frame_45
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 112
+      width: 225
+      height: 175
+    spriteID: 25441fb140542d5458aa2df4911e56d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: -338}
+  - name: Bear_Frame_46
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 295
+      width: 225
+      height: 175
+    spriteID: 95e45c92ef716714d996f0c001febe6f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 530, y: -155}
+  - name: Bear_Frame_47
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 1909
+      width: 225
+      height: 180
+    spriteID: ed6d9f35115f7ac449e14ddef551e6c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 292, y: 1459}
+  - name: Bear_Frame_48
+    originalName: 
+    pivot: {x: 0.25316456, y: 0.05}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3335
+      width: 395
+      height: 200
+    spriteID: f2585d22d58742342b6c26c721fd507f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -571, y: 2895}
+  - name: Bear_Frame_49
+    originalName: 
+    pivot: {x: 0.22222222, y: 0.093023255}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2716
+      width: 450
+      height: 215
+    spriteID: b7190b05d9549b846bd0573f44ba75ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -566, y: 2286}
+  - name: Bear_Frame_50
+    originalName: 
+    pivot: {x: 0.17699115, y: 0.102564104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2513
+      width: 565
+      height: 195
+    spriteID: 227b8836f54ed80428b056eff60ee509
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -551, y: 2083}
+  - name: Bear_Frame_51
+    originalName: 
+    pivot: {x: 0.1724138, y: 0.078947365}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2315
+      width: 580
+      height: 190
+    spriteID: 7d0b7c0c77241a84e83a47d1e0264fe4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -581, y: 1880}
+  - name: Bear_Frame_52
+    originalName: 
+    pivot: {x: 0.14814815, y: 0.102564104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2112
+      width: 675
+      height: 195
+    spriteID: 4fc4f6b01bc1b7b48a943ffd19870fca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -586, y: 1682}
+  - name: Bear_Frame_53
+    originalName: 
+    pivot: {x: 0.14084508, y: 0.102564104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1909
+      width: 710
+      height: 195
+    spriteID: 71e616ef1fc1d964e9990a6db8a1c379
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 1479}
+  - name: Bear_Frame_54
+    originalName: 
+    pivot: {x: 0.12345679, y: 0.102564104}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 776
+      width: 810
+      height: 195
+    spriteID: aff9b00d45812214fac1dcf91255a2ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 346}
+  - name: Bear_Frame_55
+    originalName: 
+    pivot: {x: 0.1183432, y: 0.083333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1543
+      width: 845
+      height: 180
+    spriteID: ab5f1fa49506e89458b9ffd3190b961c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 1108}
+  - name: Bear_Frame_56
+    originalName: 
+    pivot: {x: 0.116959065, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 583
+      width: 855
+      height: 185
+    spriteID: 0265ba64fa49e564db9f7b9d16bb98b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 153}
+  - name: Bear_Frame_57
+    originalName: 
+    pivot: {x: 0.11627907, y: 0.10810811}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 390
+      width: 860
+      height: 185
+    spriteID: 86161828f3d04e047ab42fb72583c335
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: -40}
+  - name: Bear_Frame_58
+    originalName: 
+    pivot: {x: 0.11627907, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1731
+      width: 860
+      height: 170
+    spriteID: 16c4ce72af3d3864990bf6ee29e7f19f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 1281}
+  - name: Bear_Frame_59
+    originalName: 
+    pivot: {x: 0.11494253, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1360
+      width: 870
+      height: 175
+    spriteID: 1b78a352797120e45944d0653427848a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 910}
+  - name: Bear_Frame_60
+    originalName: 
+    pivot: {x: 0.114285715, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 979
+      width: 875
+      height: 180
+    spriteID: a5350f8c12bde2a488e4827aeaec7fff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 529}
+  - name: Bear_Frame_61
+    originalName: 
+    pivot: {x: 0.11363637, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 197
+      width: 880
+      height: 185
+    spriteID: 8cdf17dbb1df856448d206941337f302
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: -253}
+  - name: Bear_Frame_62
+    originalName: 
+    pivot: {x: 0.11299435, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 885
+      height: 185
+    spriteID: b88a8805aa3346a45b4f6b11f6c691de
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: -446}
+  - name: Bear_Frame_63
+    originalName: 
+    pivot: {x: 0.119760476, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1167
+      width: 835
+      height: 185
+    spriteID: c79baf8493a466247ac7484848ded8d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -591, y: 717}
+  - name: Bear_Frame_64
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 897
+      y: 2097
+      width: 225
+      height: 180
+    spriteID: 29b39f0a7a3824e4794b56cb400710ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 302, y: 1647}
+  - name: Bear_Frame_65
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 478
+      width: 225
+      height: 175
+    spriteID: ea7207233cb29364ab50c5f5723b738e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 28}
+  - name: Bear_Frame_66
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2258
+      width: 225
+      height: 170
+    spriteID: 6dfeaff2ac203d540bc0f2e3d82bdbfa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1808}
+  - name: Bear_Frame_67
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2436
+      width: 225
+      height: 170
+    spriteID: 312e4b0099c742c408587501f15f5daa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 1986}
+  - name: Bear_Frame_68
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2614
+      width: 225
+      height: 170
+    spriteID: 0ecc2fd16c72cb048a5e9c52aa417e1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 2164}
+  - name: Bear_Frame_69
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2792
+      width: 225
+      height: 170
+    spriteID: 7993dd762f54e164dbce727973460dd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 535, y: 2342}
+  - name: Bear_Frame_70
+    originalName: 
+    pivot: {x: 0.44444445, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 2970
+      width: 225
+      height: 170
+    spriteID: 76ee57008bc5584448a1aa19ab0363db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 530, y: 2520}
+  - name: Bear_Frame_71
+    originalName: 
+    pivot: {x: 0.3469388, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 661
+      width: 245
+      height: 160
+    spriteID: 86b2502a01d5ab1488f0de9efc1e11c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 515, y: 211}
+  - name: Bear_Frame_72
+    originalName: 
+    pivot: {x: 0.49253732, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3275
+      width: 335
+      height: 140
+    spriteID: ac99c472f8ff2fe48ab827ef5481fe0a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -168, y: 2825}
+  - name: Bear_Frame_73
+    originalName: 
+    pivot: {x: 0.42352942, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3904
+      width: 425
+      height: 130
+    spriteID: 077263e904f393346a018101546434ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -611, y: 3454}
+  - name: Bear_Frame_74
+    originalName: 
+    pivot: {x: 0.26666668, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3137
+      width: 375
+      height: 130
+    spriteID: f6e8d8a955611c94183b85e56694aa72
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -253, y: 2687}
+  - name: Bear_Frame_75
+    originalName: 
+    pivot: {x: 0.25, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3621
+      width: 400
+      height: 105
+    spriteID: ef3e3cd2d41183346947e2406272d913
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -263, y: 3171}
+  - name: Bear_Frame_76
+    originalName: 
+    pivot: {x: 0.25, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1130
+      y: 4
+      width: 400
+      height: 100
+    spriteID: e68d3ba616a49184a906db6c55247171
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 405, y: -446}
+  - name: Bear_Frame_77
+    originalName: 
+    pivot: {x: 0.24691358, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 452
+      y: 3927
+      width: 405
+      height: 100
+    spriteID: 44e9c74bc12a17d4fa440d54cec19416
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -273, y: 3477}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -201216416
+    name: Bear
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Bear_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 17de667e74c5d8c4e80bdac5c42c29d1
+    - name: Bear_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 7a3f823c68fc8144f9f96b5f4cdd4d71
+    - name: Bear_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 696ffee7355f2e144a0ca8f6548a27a0
+    - name: Bear_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: feafe90281f52f64dba48d112300f3ee
+    - name: Bear_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: d0daeda2302da8b458ddc23d90d2c00c
+    - name: Bear_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 4dda48dbcbf946248a445202018bfe88
+    - name: Bear_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: de64d4e9771e78644b678f9d3881597b
+    - name: Bear_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 655a372125c61774d96f4bdcc4294dd6
+    - name: Bear_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 50e504c705c02d540a93e2a05cbf099b
+    - name: Bear_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 890cf6213312bfc4f9635e8eb534a868
+    - name: Bear_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: a86fe0439d3e16641ac8286beddb19eb
+    - name: Bear_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 36205725034fc844d9bf205f60facfbf
+    - name: Bear_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 9d344849051df834da7256689ba9354a
+    - name: Bear_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: e18cb18c77ff82342b92a4d15d9eee8d
+    - name: Bear_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: b91a9486ece34254ab6b79087ef27e71
+    - name: Bear_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 55dbe235361f09d4582b6b6538830258
+    - name: Bear_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: d1d4d1ce2a7716542b1b3940d9ae4545
+    - name: Bear_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 8564a0ce20289a14399b0163311c4261
+    - name: Bear_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 0aa1feb424285a141af153873da85a60
+    - name: Bear_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 4ca03e4ac38e5824f825e5afa2432b21
+    - name: Bear_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 543d09b42a76098408bc146f51a2435a
+    - name: Bear_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: b9ab64a00c42ce8489bba7f1c85c0b6e
+    - name: Bear_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: eb4ef2bc3e7046142baace9fb7e2c05f
+    - name: Bear_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 910628bf410bb8d4397a42ff92871731
+    - name: Bear_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: a6af5638b314c7548b34c0dd04c1e665
+    - name: Bear_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 1f430b7f78670d24d969d3ff93378547
+    - name: Bear_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: f1a89c32f11267545b3cef5a1596345d
+    - name: Bear_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 9bf59ba3784c1fb41bf52cd65f2f9d5b
+    - name: Bear_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 18e5ce02ce3f1134d9579744ffaacd37
+    - name: Bear_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 14040c4db3673d541882290d40455c67
+    - name: Bear_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 370322dadb1c0bb4e98cc816d5191cc0
+    - name: Bear_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 0f39fe26d7f89b540a2b3b7a3723f91d
+    - name: Bear_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: f8d94c74efd83064498166d4afaaaeef
+    - name: Bear_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: bdf5d4ea5bb6dbb4196b0c4daf05186d
+    - name: Bear_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 0d057b96607fddb49bbc114151198733
+    - name: Bear_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 253ff46c8670f0348891fe3ad433d4f1
+    - name: Bear_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 31bce03c8aea2694da36d44a0de9a138
+    - name: Bear_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 2d79658b38cc00e49a4228601022f954
+    - name: Bear_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: cd356900801748046979708271e54b40
+    - name: Bear_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 8ee93850e057f2d43ba794907e4f6c71
+    - name: Bear_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: daf6bd81912ed8c42abff74c66557fd4
+    - name: Bear_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 50ba1183ed9e65242bafac14e72249f1
+    - name: Bear_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 76fb4d0ef8232554a8bce6f6fc55abbc
+    - name: Bear_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 27679432f16f95c4690d70da429bf063
+    - name: Bear_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: d527078328351ad4cb9b0bee4cbb9994
+    - name: Bear_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 25441fb140542d5458aa2df4911e56d2
+    - name: Bear_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 95e45c92ef716714d996f0c001febe6f
+    - name: Bear_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: ed6d9f35115f7ac449e14ddef551e6c1
+    - name: Bear_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: f2585d22d58742342b6c26c721fd507f
+    - name: Bear_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: b7190b05d9549b846bd0573f44ba75ee
+    - name: Bear_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 227b8836f54ed80428b056eff60ee509
+    - name: Bear_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 7d0b7c0c77241a84e83a47d1e0264fe4
+    - name: Bear_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 4fc4f6b01bc1b7b48a943ffd19870fca
+    - name: Bear_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 71e616ef1fc1d964e9990a6db8a1c379
+    - name: Bear_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: aff9b00d45812214fac1dcf91255a2ca
+    - name: Bear_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: ab5f1fa49506e89458b9ffd3190b961c
+    - name: Bear_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 0265ba64fa49e564db9f7b9d16bb98b3
+    - name: Bear_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 86161828f3d04e047ab42fb72583c335
+    - name: Bear_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 16c4ce72af3d3864990bf6ee29e7f19f
+    - name: Bear_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 1b78a352797120e45944d0653427848a
+    - name: Bear_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: a5350f8c12bde2a488e4827aeaec7fff
+    - name: Bear_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 8cdf17dbb1df856448d206941337f302
+    - name: Bear_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: b88a8805aa3346a45b4f6b11f6c691de
+    - name: Bear_Frame_63
+      frameIndex: 63
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: c79baf8493a466247ac7484848ded8d4
+    - name: Bear_Frame_64
+      frameIndex: 64
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 29b39f0a7a3824e4794b56cb400710ae
+    - name: Bear_Frame_65
+      frameIndex: 65
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: ea7207233cb29364ab50c5f5723b738e
+    - name: Bear_Frame_66
+      frameIndex: 66
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 6dfeaff2ac203d540bc0f2e3d82bdbfa
+    - name: Bear_Frame_67
+      frameIndex: 67
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 312e4b0099c742c408587501f15f5daa
+    - name: Bear_Frame_68
+      frameIndex: 68
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 0ecc2fd16c72cb048a5e9c52aa417e1d
+    - name: Bear_Frame_69
+      frameIndex: 69
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 7993dd762f54e164dbce727973460dd7
+    - name: Bear_Frame_70
+      frameIndex: 70
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 76ee57008bc5584448a1aa19ab0363db
+    - name: Bear_Frame_71
+      frameIndex: 71
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 86b2502a01d5ab1488f0de9efc1e11c0
+    - name: Bear_Frame_72
+      frameIndex: 72
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: ac99c472f8ff2fe48ab827ef5481fe0a
+    - name: Bear_Frame_73
+      frameIndex: 73
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 077263e904f393346a018101546434ef
+    - name: Bear_Frame_74
+      frameIndex: 74
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: f6e8d8a955611c94183b85e56694aa72
+    - name: Bear_Frame_75
+      frameIndex: 75
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: ef3e3cd2d41183346947e2406272d913
+    - name: Bear_Frame_76
+      frameIndex: 76
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: e68d3ba616a49184a906db6c55247171
+    - name: Bear_Frame_77
+      frameIndex: 77
+      cellRect:
+        x: 0
+        y: 0
+        width: 1600
+        height: 960
+      spriteId: 44e9c74bc12a17d4fa440d54cec19416
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 1600, y: 960}
